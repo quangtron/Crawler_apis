@@ -20,6 +20,13 @@ defmodule CrawlerApisWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/apis", CrawlerApisWeb do
+    pipe_through :api
+
+    post "/crawler", CrawlerController, :craw
+    post "/crawler/many", CrawlerController, :craw_many
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", CrawlerApisWeb do
   #   pipe_through :api

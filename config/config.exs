@@ -17,6 +17,12 @@ config :crawler_apis, CrawlerApisWeb.Endpoint,
   pubsub_server: CrawlerApis.PubSub,
   live_view: [signing_salt: "zzFPH0H0"]
 
+config :crawly,
+  pipelines: [
+    # encode each item into json
+    Crawly.Pipelines.JSONEncoder
+  ]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
