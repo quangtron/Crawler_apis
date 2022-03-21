@@ -50,7 +50,8 @@ defmodule CrawlerApis.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:crawly, "~> 0.13.0"},
       {:floki, "~> 0.26.0"},
-      {:json, "~> 1.4"}
+      {:json, "~> 1.4"},
+      {:cors_plug, "~> 2.0"}
     ]
   end
 
