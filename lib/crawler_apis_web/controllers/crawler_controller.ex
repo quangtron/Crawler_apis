@@ -1,11 +1,9 @@
 defmodule CrawlerApisWeb.CrawlerController do
   use CrawlerApisWeb, :controller
-  # use CrawlerBll
 
   def craw(conn, %{"url" => url}) do
-    conn
-    |> put_status(200)
-    |> json(%{doc: CrawlerApisWeb.Bill.Crawler.craw_by_url(url), status: 200})
+    rs = CrawlerApisWeb.Bill.Crawler.craw_and_write_to_db(url)
+    conn |> json(%{status: rs})
   end
 
   def craw_many(conn, %{"urls" => urls}) do

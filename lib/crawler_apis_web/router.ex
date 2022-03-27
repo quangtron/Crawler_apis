@@ -26,6 +26,10 @@ defmodule CrawlerApisWeb.Router do
 
     post "/crawler", CrawlerController, :craw
     post "/crawler/many", CrawlerController, :craw_many
+    resources "/movie", MovieController, only: [:index]
+    resources "/category", CategoryController, only: [:index]
+    resources "/country", CountryController, only: [:index]
+    resources "/director", DirectorController, only: [:index]
   end
 
   # Other scopes may use custom stacks.
